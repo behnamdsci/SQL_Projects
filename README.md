@@ -1,6 +1,6 @@
 # SQL_Projects Repository
 
-Welcome to my **SQL Projects** repository — a curated collection of hands-on SQL analyses designed for learning, portfolio building, and demonstrating practical data skills.  
+Welcome to my **SQL_Projects** repository — a curated collection of hands-on SQL analyses designed for learning, portfolio building, and demonstrating practical data skills.  
 Each project is self-contained, reproducible, and built using **SQLite** for maximum portability and ease of use.
 
 ---
@@ -44,7 +44,6 @@ Every project in this repository follows a consistent, beginner-friendly structu
 - **SQLite** — lightweight, file-based SQL engine  
 - **SQL** — data cleaning, transformation, querying, and analysis  
 - **VS Code + SQLite extensions** — for running and testing queries  
-- **Python (optional)** — for data preprocessing or visualization in some projects  
 
 ---
 
