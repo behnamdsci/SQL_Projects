@@ -9,11 +9,11 @@ The goal of this project is to analyze chocolate sales performance across differ
 
     Chocolate_Sales/
     │
-    ├── dataset.csv
-    ├── database.sqlite
-    ├── schema.sql
-    ├── queries.sql
-    └── README.md
+    ├── ChocolateSales_dataset.csv
+    ├── ChocolateSales_database.sqlite
+    ├── ChocolateSales_schema.sql
+    ├── ChocolateSales_queries.sql
+    └── ChocolateSales_README.md
 
 ### Folder Contents Explained
 
