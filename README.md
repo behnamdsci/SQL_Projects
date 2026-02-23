@@ -66,6 +66,47 @@ This repository is designed to:
 
 ---
 
+## 🧠 My Analysis Method (Used in Every Project)
+
+Each project includes a structured analytical workflow to ensure clarity, depth, and reproducibility:
+
+### **1. Column-by-Column Data Understanding**
+For every dataset, I document:
+
+- The meaning of each column  
+- Data types and expected ranges  
+- Potential data quality issues  
+- Relationships between fields  
+- Business relevance of each attribute  
+
+This helps establish a strong foundation before writing any SQL.
+
+### **2. Generating Comprehensive Analysis Questions**
+For each project, I create a list of analytical questions such as:
+
+- Descriptive questions (counts, distributions, summaries)  
+- Diagnostic questions (patterns, anomalies, correlations)  
+- Business questions (performance, trends, comparisons)  
+- Advanced questions (window functions, ranking, segmentation)  
+
+These questions guide the SQL work and ensure the analysis is meaningful.
+
+### **3. Writing SQL Queries to Answer Each Question**
+All queries are stored in `queries.sql`, organiz
+### **4. Summarizing Insights in the Project README**
+Each project folder includes a dedicated README containing:
+
+- Problem statement  
+- Dataset description  
+- Column definitions  
+- Key analysis questions  
+- SQL solutions  
+- Insights and conclusions  
+
+This makes each project easy to understand and evaluate.
+
+---
+
 ## 📚 Project Categories
 
 Projects may include:
