@@ -41,12 +41,12 @@ Below is a detailed description of each column in the dataset:
 
 | Column | Description | Data Type | Notes |
 |--------|-------------|-----------|-------|
-| **Sales Person** | Name of the salesperson responsible for the sale | TEXT | Useful for performance comparison |
-| **Country** | Country where the sale occurred | TEXT | Enables geographic analysis |
-| **Product** | Type of chocolate product sold | TEXT | Allows product-level insights |
-| **Date** | Date of the sale | TEXT/DATE | Can be used for trend and time-series analysis |
-| **Amount** | Revenue generated from the sale | REAL | Key metric for financial analysis |
-| **Boxes Shipped** | Number of boxes shipped to fulfill the sale | INTEGER | Helps analyze volume vs. revenue |
+| **Date** | Transaction date in `YYYY-MM-DD` format | TEXT/DATE | Enables time-series and seasonal analysis |
+| **Product** | Full chocolate product name (e.g., “50% Dark Bites”, “Smooth Silky Caramel”) | TEXT | Useful for product-level performance insights |
+| **Amount** | Sales amount in USD for the transaction | REAL | Key metric for revenue analysis |
+| **Boxes Shipped** | Number of boxes sold in the transaction | INTEGER | Helps analyze volume vs. revenue |
+| **Country** | Country where the sale occurred (e.g., Australia, UK, India, USA) | TEXT | Enables geographic comparisons |
+| **Sales Person** | Name of the responsible sales representative (e.g., Mallorie Waber, Dennison Cross) | TEXT | Useful for salesperson performance evaluation |
 
 ---
 
