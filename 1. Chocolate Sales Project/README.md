@@ -48,8 +48,6 @@ The dataset contains chocolate sales transactions across multiple countries and 
 
 ## 🧠 Analysis Method
 
-This project follows a structured SQL analysis workflow to ensure clarity, depth, and reproducibility.
-
 ### 1. Data Cleaning and Validation
 
 #### 1.1 Format Validation for All Columns
