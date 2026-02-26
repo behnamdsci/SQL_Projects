@@ -75,38 +75,37 @@ This repository is designed to:
 
 ## 🧠 My Analysis Method (Used in Every Project)
 
-Each project includes a structured analytical workflow to ensure clarity, depth, and reproducibility.
-
-### **1. Column-by-Column Data Understanding**
-
-For every dataset, I document:
-
-- Meaning of each column  
-- Data types and expected ranges  
-- Potential data quality issues  
-- Relationships between fields  
-- Business relevance of each attribute  
-
-### **2. Generating Comprehensive Analysis Questions**
-
-Each project includes descriptive, diagnostic, business, and advanced SQL questions to guide the analysis.
-
-### **3. Writing SQL Queries to Answer Each Question**
-
-All queries are stored in `queries.sql`, organized by topic or question category.
-
-### **4. Summarizing Insights in the Project README**
-
-Each project folder includes a dedicated README containing:
-
-- Problem statement  
-- Dataset description  
-- Column definitions  
-- Key analysis questions  
-- SQL solutions  
-- Insights and conclusions  
+Each project follows a structured analytical workflow to ensure clarity, depth, and reproducibility.
 
 ---
+
+### 1. Dataset Overview
+
+Every project begins with a clear understanding of the dataset. This includes documenting the purpose of each column, identifying expected data types and ranges, noting potential quality issues, and understanding the business relevance of each attribute. This establishes the context needed for meaningful analysis.
+
+---
+
+### 2. Data Cleaning and Validation
+
+A reliable analysis requires clean, consistent data. This step focuses on verifying and correcting data types, resolving missing or duplicated records, standardizing naming conventions, validating numeric ranges, ensuring date accuracy, and identifying outliers. The goal is to prepare a trustworthy dataset that supports accurate analytical results.
+
+---
+
+### 3. Descriptive Analysis
+
+With clean data, descriptive analysis provides an initial understanding of overall patterns and distributions. This includes summarizing totals, averages, counts, and rankings to reveal the basic structure of the dataset. These descriptive metrics form the foundation for deeper exploration.
+
+---
+
+### 4. Column Combinations and Relationship Exploration
+
+Each column is examined in combination with others to uncover meaningful relationships, patterns, and interactions. This includes comparing categories, analyzing trends across dimensions, evaluating performance differences, and identifying correlations or anomalies. The goal is to explore all relevant column pairings and determine whether the resulting insights are meaningful from a business or analytical perspective.
+
+---
+
+### 5. Insights Summary and Visualization Opportunities
+
+Insights from descriptive and relational analysis are summarized clearly and concisely. This includes highlighting key findings, notable trends, performance differences, and unexpected patterns. The section also identifies which insights are best suited for visualization—such as trends, comparisons, rankings, or correlations—to support clearer communication and interpretation of results.
 
 ## 📚 Project Categories
 
