@@ -12,9 +12,11 @@ ChocolateSales/
 │
 ├── ChocolateSales_dataset.csv
 ├── ChocolateSales_schema.sql
+├── ChocolateSales_import.sql
 ├── ChocolateSales_queries.sql
 └── README.md
 ```
+
 
 ### File Descriptions
 
@@ -22,6 +24,7 @@ ChocolateSales/
 |------|---------|
 | **ChocolateSales_dataset.csv** | Raw transactional sales data |
 | **ChocolateSales_schema.sql** | PostgreSQL schema (tables, data types, constraints) |
+| **ChocolateSales_import.sql** | COPY/INSERT script to import the dataset into PostgreSQL |
 | **ChocolateSales_queries.sql** | All SQL analysis queries |
 | **README.md** | Documentation, questions, insights |
 
@@ -49,9 +52,9 @@ The dataset contains chocolate sales transactions across multiple countries and 
 This project follows my standard SQL analysis workflow:
 
 ### **1. Column-by-Column Data Understanding**
-- Validate data types (dates, numeric fields, text fields)  
-- Identify potential quality issues (missing values, inconsistent product names, outliers)  
-- Understand business meaning of each attribute  
+- Validate data types (dates, numeric fields, text fields)
+- Identify potential quality issues (missing values, inconsistent product names, outliers)
+- Understand business meaning of each attribute
 - Explore relationships (e.g., product vs. country, salesperson vs. revenue)
 
 ### **2. Generating Analysis Questions**
@@ -108,9 +111,9 @@ After running the queries, insights will be documented here, including:
 ## 🚀 How to Run This Project
 
 1. Create a new PostgreSQL database in **pgAdmin 4**.  
-2. Run `schema.sql` to create the table structure.  
-3. Import `dataset.csv` into the table.  
-4. Execute the analysis queries in `queries.sql`.  
+2. Run `ChocolateSales_schema.sql` to create the table structure.  
+3. Run `ChocolateSales_import.sql` to load the dataset.  
+4. Execute the analysis queries in `ChocolateSales_queries.sql`.  
 5. Review insights in this README.
 
 ---
