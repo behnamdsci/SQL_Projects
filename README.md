@@ -15,17 +15,20 @@ SQL_Projects/
 ├── Project_Name_1/
 │   ├── dataset.csv
 │   ├── schema.sql
+│   ├── import.sql
 │   ├── queries.sql
 │   └── README.md
 │
 ├── Project_Name_2/
 │   ├── dataset.csv
 │   ├── schema.sql
+│   ├── import.sql
 │   ├── queries.sql
 │   └── README.md
 │
 └── ...
 ```
+
 
 ### Folder Contents Explained
 
@@ -33,12 +36,13 @@ SQL_Projects/
 |------|---------|
 | **dataset.csv** | Raw dataset used in the project |
 | **schema.sql** | SQL script defining the PostgreSQL schema (tables, types, constraints) |
+| **import.sql** | SQL script for importing the dataset into PostgreSQL (COPY or INSERT) |
 | **queries.sql** | All SQL queries used for analysis |
 | **README.md** | Project-level documentation (problem, approach, insights) |
 
 > **Note:**  
 > PostgreSQL does not use a single portable `.sqlite` file.  
-> Each project includes the schema and dataset so you can easily recreate the database in pgAdmin 4.
+> Each project includes the schema, dataset, and import script so you can easily recreate the database in pgAdmin 4.
 
 ---
 
@@ -83,18 +87,9 @@ For every dataset, I document:
 - Relationships between fields  
 - Business relevance of each attribute  
 
-This establishes a strong foundation before writing any SQL.
-
 ### **2. Generating Comprehensive Analysis Questions**
 
-For each project, I create a list of analytical questions such as:
-
-- Descriptive questions (counts, distributions, summaries)  
-- Diagnostic questions (patterns, anomalies, correlations)  
-- Business questions (performance, trends, comparisons)  
-- Advanced questions (window functions, ranking, segmentation)  
-
-These questions guide the SQL work and ensure meaningful analysis.
+Each project includes descriptive, diagnostic, business, and advanced SQL questions to guide the analysis.
 
 ### **3. Writing SQL Queries to Answer Each Question**
 
@@ -111,20 +106,18 @@ Each project folder includes a dedicated README containing:
 - SQL solutions  
 - Insights and conclusions  
 
-This makes each project easy to understand and evaluate.
-
 ---
 
 ## 📚 Project Categories
 
 Projects may include:
 
-- **Data Cleaning Projects**  
-- **Exploratory SQL Analysis**  
-- **Business Case Studies**  
-- **Mini-ETL Workflows**  
-- **Database Design Exercises**  
-- **Real-world datasets (finance, retail, HR, logistics, etc.)**
+- Data Cleaning Projects  
+- Exploratory SQL Analysis  
+- Business Case Studies  
+- Mini-ETL Workflows  
+- Database Design Exercises  
+- Real-world datasets (finance, retail, HR, logistics, etc.)
 
 ---
 
@@ -137,7 +130,7 @@ Projects may include:
 2. Open any project folder.  
 3. Create a new PostgreSQL database in **pgAdmin 4**.  
 4. Run `schema.sql` to create tables and constraints.  
-5. Import `dataset.csv` into the appropriate table(s).  
+5. Run `import.sql` to load the dataset.  
 6. Execute the analysis using `queries.sql`.  
 7. Read the project-level README for insights and explanations.
 
