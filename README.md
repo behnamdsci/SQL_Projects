@@ -72,9 +72,10 @@ This repository is designed to:
   - Schema design  
 
 ---
-## 1. Dataset Overview
+## 📊Dataset Overview
 
 Every project begins with a clear understanding of the dataset. This includes documenting the purpose of each column, identifying expected data types and ranges, noting potential quality issues, and understanding the business relevance of each attribute. This establishes the context needed for meaningful analysis.
+
 ---
 
 ## 🧠 My Analysis Method (Used in Every Project)
