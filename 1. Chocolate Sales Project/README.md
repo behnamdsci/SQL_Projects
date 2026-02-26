@@ -18,7 +18,7 @@ ChocolateSales/
 ```
 
 
-### File Descriptions
+## File Descriptions
 
 | File | Purpose |
 |------|---------|
@@ -29,74 +29,81 @@ ChocolateSales/
 | **README.md** | Documentation, questions, insights |
 
 ---
+## 🧠 Analysis Method
 
-## 📊 Dataset Overview
+This project follows a structured SQL analysis workflow to ensure clarity, depth, and reproducibility.
 
+### 1. Dataset Overview
 The dataset contains chocolate sales transactions across multiple countries and sales representatives.
 
-### **Columns & Definitions**
+#### Columns & Definitions
 
 | Column | Description |
 |--------|-------------|
 | **Date** | Transaction date in `YYYY-MM-DD` format |
-| **Product** | Full product name (e.g., *"50% Dark Bites"*, *"Smooth Silky Caramel"*) |
+| **Product** | Full product name |
 | **Amount** | Sales amount in USD for the transaction |
 | **Boxes Shipped** | Number of boxes sold in the transaction |
-| **Country** | Customer/sales country (e.g., Australia, UK, India, USA) |
+| **Country** | Customer or sales country |
 | **Sales Person** | Name of the responsible sales representative |
 
----
 
-## 🧠 Analysis Method
+### 2. Data Cleaning and Validation
 
-This project follows my standard SQL analysis workflow:
+#### 2.1 Format Validation for All Columns
+Each column is checked to ensure it follows the correct data type and formatting rules:
+- **Date** must follow the `YYYY-MM-DD` format and represent valid calendar dates.
+- **Product** must contain valid text values without numeric-only or corrupted entries.
+- **Amount** must be numeric with two decimal places and free of symbols or text.
+- **Boxes Shipped** must be an integer value without decimals or non-numeric characters.
+- **Country** must contain alphabetic text representing valid country names.
+- **Sales Person** must contain valid name strings, not numbers or empty values.
 
-### **1. Column-by-Column Data Understanding**
-- Validate data types (dates, numeric fields, text fields)
-- Identify potential quality issues (missing values, inconsistent product names, outliers)
-- Understand business meaning of each attribute
-- Explore relationships (e.g., product vs. country, salesperson vs. revenue)
+This ensures the dataset loads correctly into PostgreSQL and supports accurate querying.
 
-### **2. Generating Analysis Questions**
-A structured set of questions guides the SQL work.
+#### 2.2 Removing Duplicates
+Duplicate detection focuses on identifying rows that represent the same real-world transaction. Duplicates are checked using a combination of key identifying fields:
+- **Date**
+- **Product**
+- **Country**
+- **Sales Person**
 
-#### **Descriptive Questions**
-- What is the total revenue?  
-- How many boxes were shipped overall?  
-- What are the top-selling products by revenue?  
-- Which countries generate the most sales?
+If multiple rows share the same values for these columns, they are reviewed to determine whether they represent accidental duplicate entries. The **Amount** and **Boxes Shipped** values are compared to confirm whether the duplicates are true errors or legitimate repeated orders. Confirmed duplicates are removed to prevent inflated revenue or shipment totals.
 
-#### **Diagnostic Questions**
-- Are there seasonal or monthly sales patterns?  
-- Which products have the highest average revenue per transaction?  
-- Are certain salespeople consistently outperforming others?
+#### 2.3 Searching for Missing Values
+Each column is scanned for NULL or empty values:
+- **Date** missing values disrupt time-based analysis.
+- **Product** missing values prevent product-level grouping.
+- **Amount** missing values distort revenue calculations.
+- **Boxes Shipped** missing values affect volume analysis.
+- **Country** missing values break regional comparisons.
+- **Sales Person** missing values impact performance evaluation.
 
-#### **Business Questions**
-- Which country–product combinations are most profitable?  
-- Which salesperson drives the highest revenue per box shipped?  
-- What product categories should be prioritized for specific regions?
+Depending on severity, missing values may be corrected, categorized (e.g., “Unknown”), or removed.
 
-#### **Advanced SQL Questions**
-- Rank products by total revenue using window functions  
-- Calculate rolling monthly revenue  
-- Identify top 3 salespeople per country  
-- Segment customers by purchasing behavior (if applicable)
+#### 2.4 Text Standardization for Text Columns
+Text fields are standardized to ensure consistent grouping and avoid splitting categories:
+- **Product** names are cleaned for casing, spacing, and spelling consistency.
+- **Country** names are normalized to a single format (e.g., “USA” vs. “United States”).
+- **Sales Person** names are standardized for consistent capitalization and spacing.
 
-### **3. SQL Queries**
-All SQL solutions are stored in `queries.sql`, organized by category:
-- Descriptive analytics  
-- Product performance  
-- Salesperson performance  
-- Country-level insights  
-- Window function analyses  
+This prevents the same category from appearing multiple times due to formatting differences.
 
-### **4. Insights Summary**
-After running the queries, insights will be documented here, including:
-- Key revenue drivers  
-- High-performing regions  
-- Best-selling products  
-- Salesperson comparisons  
-- Trends and anomalies  
+#### 2.5 Range Check for Numeric Columns
+Numeric fields are validated to ensure values fall within realistic business ranges:
+- **Amount** must be non-negative; unusually high values are reviewed for potential data entry errors.
+- **Boxes Shipped** must be positive integers; extremely large quantities are checked for accuracy.
+
+Range checks help detect outliers, typos, or corrupted data that could distort analysis.
+
+### 3. Descriptive Analysis
+With clean data, descriptive analysis provides an initial understanding of overall patterns and distributions. This includes summarizing totals, averages, counts, and rankings to reveal the basic structure of the dataset. These descriptive metrics form the foundation for deeper exploration.
+
+### 4. Column Combinations and Relationship Exploration
+Each column is examined in combination with others to uncover meaningful relationships, patterns, and interactions. This includes comparing categories, analyzing trends across dimensions, evaluating performance differences, and identifying correlations or anomalies. The goal is to explore all relevant column pairings and determine whether the resulting insights are meaningful from a business or analytical perspective.
+
+### 5. Insights Summary and Visualization Opportunities
+Insights from descriptive and relational analysis are summarized clearly and concisely. This includes highlighting key findings, notable trends, performance differences, and unexpected patterns. The section also identifies which insights are best suited for visualization—such as trends, comparisons, rankings, or correlations—to support clearer communication and interpretation of results.
 
 ---
 
